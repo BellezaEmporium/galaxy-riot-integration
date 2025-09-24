@@ -58,6 +58,12 @@ class RiotPlugin(Plugin):
                 None,
                 LicenseInfo(LicenseType.FreeToPlay),
             ),
+            Game(
+                GameID.twoxko,
+                "2XKO",
+                None,
+                LicenseInfo(LicenseType.FreeToPlay),
+            ),
         ]
 
     async def get_local_games(self):
@@ -104,6 +110,8 @@ class RiotPlugin(Plugin):
         elif game_id == GameID.legends_of_runeterra:
             return OSCompatibility.Windows
         elif game_id == GameID.valorant:
+            return OSCompatibility.Windows
+        elif game_id == GameID.twoxko:
             return OSCompatibility.Windows
 
     async def install_game(self, game_id):
