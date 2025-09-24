@@ -5,11 +5,11 @@ class GameID:
     league_of_legends = "league_of_legends"
     legends_of_runeterra = "bacon"
     valorant = "valorant"
-    vanguard = "vanguard"  # anti-cheat for valorant
+    vanguard = "vanguard"  # anti-cheat for valorant & league
     twoxko = "project-l" # closed beta, wait oct. 7 for public beta. potential name, not sure
 
 
-GAME_IDS = [GameID.legends_of_runeterra, GameID.league_of_legends, GameID.valorant]
+GAME_IDS = [GameID.legends_of_runeterra, GameID.league_of_legends, GameID.valorant, GameID.twoxko]
 # Registry info is still needed to detect Vanguard.
 REGISTRY_START_PATHS = [winreg.HKEY_CURRENT_USER, winreg.HKEY_LOCAL_MACHINE]
 SOFTWARE_PATHS = ["SOFTWARE\\", "SOFTWARE\\WOW6432Node\\"]
