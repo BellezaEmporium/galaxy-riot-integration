@@ -5,7 +5,8 @@ class GameID:
     league_of_legends = "league_of_legends"
     legends_of_runeterra = "bacon"
     valorant = "valorant"
-    vanguard = "vanguard"  # not really a game
+    vanguard = "vanguard"  # anti-cheat for valorant
+    twoxko = "project-l" # closed beta, wait oct. 7 for public beta. potential name, not sure
 
 
 GAME_IDS = [GameID.legends_of_runeterra, GameID.league_of_legends, GameID.valorant]
@@ -17,6 +18,7 @@ GAME_REGISTRY_PATH = {
     GameID.league_of_legends: "Riot Game league_of_legends.live",
     GameID.legends_of_runeterra: "Riot Game bacon.live",
     GameID.valorant: "Riot Game valorant.live",
+    GameID.twoxko: "Riot Game project-l.live",
     "vanguard": "Riot Vanguard",
 }
 UNINSTALL_STRING_KEY = "UninstallString"
@@ -25,6 +27,7 @@ DOWNLOAD_URL = {
     GameID.league_of_legends: "https://lol.secure.dyn.riotcdn.net/channels/public/x/installer/current/live.na.exe",  # noqa: E501
     GameID.legends_of_runeterra: "https://bacon.secure.dyn.riotcdn.net/channels/public/x/installer/current/live.exe",  # noqa: E501
     GameID.valorant: "https://valorant.secure.dyn.riotcdn.net/channels/public/x/installer/current/live.live.eu.exe",  # noqa: E501
+    GameID.twoxko: "https://project-l.secure.dyn.riotcdn.net/channels/public/x/installer/current/live.exe" # invalid link for now, noqa: E501
 }
 LOCAL_FILE_CACHE = os.path.expandvars(
     "%LOCALAPPDATA%\\GOG.com\\Galaxy\\plugins\\installed\\riot_play_time_cache.txt"
