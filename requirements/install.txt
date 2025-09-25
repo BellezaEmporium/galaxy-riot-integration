@@ -5,8 +5,11 @@ PyYAML==6.0.1
 
 # for time tracker inside gog galaxy
 galaxyutils
+# to counter openssl issues
+urllib3<2.0
 
 # for tasks
+requests
 invoke==2.2.0
 wheel
 

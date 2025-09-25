@@ -53,26 +53,20 @@ def build(c, output="build", ziparchive=None):
 
     # Firstly dependencies needs to be "flatten" with pip-compile
     # as pip requires --no-deps if --platform is used
-    print_task("Flattening dependencies to temporary requirements file from Pipfile")
+    print_task("Flattening dependencies from requirements file")
     with tempfile.NamedTemporaryFile(mode="w", delete=False) as tmp:
-        c.run("pipenv requirements", out_stream=tmp)
+        c.run(f'pip-compile requirements/install.txt --resolver=backtracking --output-file=-', out_stream=tmp)
 
     # Then install all stuff with pip to output folder
     print_task("Installing with pip for specific version")
     args = [
-        "pip",
-        "install",
-        "-r",
-        tmp.name,
-        "--python-version",
-        "37",
-        "--platform",
-        PIP_PLATFORM,
+        'pip', 'install',
+        '-r', tmp.name,
+        '--python-version', '37', # Galaxy requires Python 3.7
+        '--platform', PIP_PLATFORM,
         '--target "{}"'.format(output),
-        "--no-compile",
-        "--no-deps",
-        "--implementation",
-        "cp",
+        '--no-compile',
+        '--no-deps'
     ]
     c.run(" ".join(args), echo=True)
     os.unlink(tmp.name)
