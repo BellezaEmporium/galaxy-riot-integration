@@ -4,7 +4,7 @@ A GOG Galaxy 2.0 Community integration for Riot!
 
 [![v0.2.6](https://img.shields.io/badge/version-v0.2.6-blue)](https://github.com/BellezaEmporium/galaxy-riot-integration/releases/tag/v0.2.6)
 [![MIT License](https://img.shields.io/github/license/BellezaEmporium/galaxy-riot-integration)](https://github.com/BellezaEmporium/galaxy-riot-integration/blob/master/LICENSE)
-[![v0.2.6 Downloads](https://img.shields.io/github/downloads/BellezaEmporium/galaxy-riot-integration/v0.2.6/total.svg)](https://github.com/BellezaEmporium/galaxy-riot-integration/releases/tag/v0.2.6)
+[![v0.2.6 Downloads](https://img.shields.io/github/downloads/BellezaEmporium/galaxy-riot-integration/v0.2.6/total.svg)](https://github.com/BellezaEmporium/galaxy-riot-integration/releases/tag/0.2.6)
 
 ![games_example](https://raw.githubusercontent.com/BellezaEmporium/gog-riot-integration/master/screenshot.png)
 
