@@ -17,7 +17,7 @@ import tempfile
 from shutil import rmtree
 from distutils.dir_util import copy_tree
 
-from invoke import task
+from invoke.tasks import task
 from galaxy.tools import zip_folder_to_file
 import colorama
 

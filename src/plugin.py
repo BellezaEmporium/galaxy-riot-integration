@@ -83,9 +83,10 @@ class RiotPlugin(Plugin):
                 self.local_client.install_location[game_id], if_none=0
             )
             if game_id == GameID.valorant:
-                size += await misc.get_size_at_path(
+                vanguard_size = await misc.get_size_at_path(
                     self.local_client.install_location[GameID.vanguard], if_none=0
                 )
+                size = (size or 0) + (vanguard_size or 0)
             if size == 0:
                 size = None
             sizes.append(size)
@@ -99,7 +100,7 @@ class RiotPlugin(Plugin):
         self.local_client.uninstall(game_id)
 
     async def launch_game(self, game_id):
-        log.debug("RCS location: " + self.local_client.riot_client_services_path)
+        log.debug("RCS location: " + str(self.local_client.riot_client_services_path))
         self.local_client.update_installed()
         self.local_client.launch(game_id)
 

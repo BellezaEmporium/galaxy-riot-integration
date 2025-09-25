@@ -1,0 +1,14 @@
+# base pip to prevent having issues w/ tasks/invoke
+pip==22.2
+pip-tools
+PyYAML==6.0.1
+
+# for time tracker inside gog galaxy
+galaxyutils
+
+# for tasks
+invoke==2.2.0
+wheel
+
+# base galaxy plugin api from gog
+galaxy.plugin.api==0.69

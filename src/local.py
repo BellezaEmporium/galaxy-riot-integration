@@ -1,4 +1,4 @@
-import json, os, winreg, logging
+import json, os, logging
 
 from yaml import load, FullLoader
 

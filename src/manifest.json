@@ -2,9 +2,9 @@
   "name": "Riot Games Integration",
   "platform": "riot",
   "guid": "b4c0c2f5-23dc-4326-aa65-e9fabef61a3b",
-  "version": "0.2.5",
-  "description": "A plugin to integrate with riot games.",
-  "author": "samit43",
-  "url": "https://github.com/samit43/gog-riot-integration",
+  "version": "0.2.6",
+  "description": "A plugin to integrate with Riot Games.",
+  "author": "samit43, urwrstkn8mare, BellezaEmporium",
+  "url": "https://github.com/BellezaEmporium/galaxy-riot-integration",
   "script": "plugin.py"
 }

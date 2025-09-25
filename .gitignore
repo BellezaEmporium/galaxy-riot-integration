@@ -1,9 +1,3 @@
-*.pyc
-*.pyo
-*__pycache__
-*.DS_STORE
-out
-.vscode
-galaxy-riot-integration-windows.zip
-galaxy-riot-integration-mac.zip
-releases
+.venv
+Scripts/
+__pycache__/
