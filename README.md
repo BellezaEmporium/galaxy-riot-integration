@@ -35,13 +35,11 @@ When/if filing an issue please make sure to do the following:
 ## FAQ
 
 - _Game time doesn't show the time before I added the integration._
-  That's because Riot doesn't record gametime. The integration will only display gametime while you've launched it via GOG Galaxy 2.0 just like if you had added it manually. (This may change, see this [todo](https://github.com/BellezaEmporium/galaxy-riot-integration/issues/7).)
+  That's because Riot doesn't record gametime. The integration will only display gametime while you've launched it via GOG Galaxy 2.0 just like if you had added it manually.
 
 ## Todo
 
-Todos are found [here](https://github.com/BellezaEmporium/galaxy-riot-integration/labels/todo) in [issues](https://github.com/BellezaEmporium/galaxy-riot-integration/issues). They have the [todo](https://github.com/BellezaEmporium/galaxy-riot-integration/labels/todo) [label](https://github.com/BellezaEmporium/galaxy-riot-integration/labels).
-
-Any help (and feedback about this project) would be appreciated! See [Contributing](#contributing) for more info.
+- Get previous game time tracking to work (Needs validation from the Tracker.gg team into production, as the API key is invalid for now)
 
 ## Contributing
 
