@@ -1,17 +1,16 @@
-# base pip to prevent having issues w/ tasks/invoke
-pip==22.2
+# requirements for installation of the package and development
 pip-tools
 PyYAML==6.0.1
 
 # for time tracker inside gog galaxy
 galaxyutils
 # to counter openssl issues
-urllib3<2.0
+urllib3
 
 # for tasks
 requests
-invoke==2.2.0
+invoke
 wheel
 
 # base galaxy plugin api from gog
-galaxy.plugin.api==0.69
+galaxy.plugin.api==0.71

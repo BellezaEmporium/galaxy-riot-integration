@@ -1,13 +1,12 @@
+from enum import StrEnum
 import os, winreg
 
-
-class GameID:
+class GameID(StrEnum):
     league_of_legends = "league_of_legends"
     legends_of_runeterra = "bacon"
     valorant = "valorant"
-    vanguard = "vanguard"  # anti-cheat for valorant & league
+    vanguard = "vanguard"
     twoxko = "lion"
-
 
 GAME_IDS = [GameID.legends_of_runeterra, GameID.league_of_legends, GameID.valorant, GameID.twoxko]
 # Registry info is still needed to detect Vanguard.

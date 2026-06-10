@@ -119,7 +119,7 @@ class RiotPlugin(Plugin):
         log.info("Installing game")
         self.local_client.update_installed()
         if self.local_client.riot_client_services_path is None:
-            misc.download(DOWNLOAD_URL[game_id], misc.open_path)
+            misc.download(DOWNLOAD_URL[GameID(game_id)], misc.open_path)
         else:
             self.local_client.launch(game_id, save_process=False)
 

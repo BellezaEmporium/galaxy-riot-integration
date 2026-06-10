@@ -1,5 +1,5 @@
 import os, asyncio, logging, subprocess, tempfile, multiprocessing
-from types import FunctionType
+from collections.abc import Callable
 
 import requests
 
@@ -36,7 +36,8 @@ def run(cmd, *, shell=False):
     return subprocess.Popen(cmd, shell=shell)
 
 
-def open_path(path, args=[]):
+def open_path(path, args=None):
+    args = args or []
     cmd = f'"{path}" {" ".join(args)}'.strip()
     log.info(f"Opening: {path}\nWith args: {args}")
     return run(cmd)
@@ -46,14 +47,14 @@ PROCESSES = []
 
 
 def _download(u, c):
-    r = requests.get(u)
+    r = requests.get(u, timeout=30)
     download_path = os.path.join(tempfile.gettempdir(), u.split("/")[-1])
     with open(download_path, "wb") as f:
         f.write(r.content)
     c(download_path)
 
 
-def download(url, callback: FunctionType):
+def download(url, callback: Callable):
     log.info(f"Downloading: {url}")
 
     proc = multiprocessing.Process(target=_download, args=(url, callback))

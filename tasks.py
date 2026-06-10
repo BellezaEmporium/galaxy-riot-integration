@@ -14,8 +14,7 @@ import os
 import sys
 import json
 import tempfile
-from shutil import rmtree
-from distutils.dir_util import copy_tree
+from shutil import rmtree, copy2
 
 from invoke.tasks import task
 from galaxy.tools import zip_folder_to_file
@@ -40,6 +39,17 @@ elif sys.platform == "darwin":
 RELEASE_DIR = "releases"
 
 
+def copy_tree(src, dst):
+    for root, dirs, files in os.walk(src):
+        rel = os.path.relpath(root, src)
+        target_root = dst if rel == "." else os.path.join(dst, rel)
+        os.makedirs(target_root, exist_ok=True)
+        for d in dirs:
+            os.makedirs(os.path.join(target_root, d), exist_ok=True)
+        for f in files:
+            copy2(os.path.join(root, f), os.path.join(target_root, f))
+
+
 def print_task(string):
     print(f"{colorama.Fore.CYAN}--> {string}")
     print(colorama.Style.RESET_ALL)
@@ -62,7 +72,7 @@ def build(c, output="build", ziparchive=None):
     args = [
         'pip', 'install',
         '-r', tmp.name,
-        '--python-version', '37', # Galaxy requires Python 3.7
+        '--python-version', '313', # Galaxy 2.1 now requires Python 3.13
         '--platform', PIP_PLATFORM,
         '--target "{}"'.format(output),
         '--no-compile',
