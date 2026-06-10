@@ -28,7 +28,7 @@ with open(os.path.join("src", "manifest.json"), "r") as f:
 
 if sys.platform == "win32":
     DIST_DIR = os.environ["localappdata"] + "\\GOG.com\\Galaxy\\plugins\\installed"
-    PIP_PLATFORM = "win32"
+    PIP_PLATFORM = "win_amd64"
 elif sys.platform == "darwin":
     DIST_DIR = os.path.realpath(
         "~/Library/Application Support/GOG.com/Galaxy/plugins/installed"
